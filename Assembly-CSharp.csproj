@@ -73,6 +73,7 @@
     <Compile Include="Assets\FingersLite\Script\Gestures\SwipeGestureRecognizer.cs" />
     <Compile Include="Assets\FingersLite\Script\Gestures\TapGestureRecognizer.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\GoalController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <None Include="Assets\FingersLite\ChangeLog.txt" />
     <None Include="Assets\FingersLite\Readme.txt" />
