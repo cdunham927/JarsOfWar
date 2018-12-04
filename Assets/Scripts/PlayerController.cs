@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour {
 
 
         if (heldPickles > 0) {
-            GetComponent<SpriteRenderer>().color = Color.red;
+
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
+
         }
     }
 }
