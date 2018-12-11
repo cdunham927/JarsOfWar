@@ -73,9 +73,16 @@
     <Compile Include="Assets\FingersLite\Script\Gestures\SwipeGestureRecognizer.cs" />
     <Compile Include="Assets\FingersLite\Script\Gestures\TapGestureRecognizer.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\CucumberController.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\FadeText.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GoalController.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\PickleController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\TriggerController.cs" />
+    <Compile Include="Assets\Scripts\WaveSpawning.cs" />
     <None Include="Assets\FingersLite\ChangeLog.txt" />
     <None Include="Assets\FingersLite\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">

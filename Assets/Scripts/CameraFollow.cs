@@ -9,19 +9,26 @@ public class CameraFollow : MonoBehaviour {
     public float moveSpd = 1.0f;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
+        target = PlayerController.player.transform;
         SetCamera();
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        Vector3 targetPos = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+        if (target != null)
+        {
+            Vector3 targetPos = target.position + offset;
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+        }
 	}
 
     void SetCamera()
     {
-        transform.LookAt(target.position);
-        offset = transform.position - target.position;
+        if (target != null)
+        {
+            transform.LookAt(target.position);
+            offset = transform.position - target.position;
+        }
     }
 }

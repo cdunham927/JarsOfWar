@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public static PlayerController player;
     public float maxHealth = 2;
-    private float health;
+    public float health;
     public int heldPickles;
+    public float score = 0;
     Rigidbody2D bod;
     Animator anim;
     public float spd;
     Vector2 input;
+    public Text scoreText;
+    public Text helpText;
+    public Text helpButtonText;
+    public GameObject gameOver;
+    public Vector3 startPos;
+    float iframes = 0;
 
 	// Use this for initialization
 	void Awake () {
@@ -25,11 +34,13 @@ public class PlayerController : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         bod = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        startPos = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        score = 0;
         health = maxHealth;
     }
 
@@ -83,6 +94,40 @@ public class PlayerController : MonoBehaviour {
         else
         {
 
+        }
+
+        if (scoreText == null) scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+        if (helpButtonText == null) helpButtonText = GameObject.FindGameObjectWithTag("HelpButton").GetComponent<Text>();
+        if (helpText == null) helpText = GameObject.FindGameObjectWithTag("Help").GetComponent<Text>();
+        if (gameOver == null) gameOver = GameObject.FindGameObjectWithTag("GameOver");
+
+        if (scoreText != null) scoreText.text = "Score: " + Mathf.RoundToInt(score).ToString();
+        helpButtonText.text = (helpText.text == "") ? "Enable help text" : "Disable help text";
+
+        if (health > 0 && gameOver.activeInHierarchy) gameOver.SetActive(false);
+
+        if (health <= 0)
+        {
+            gameOver.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        anim.SetInteger("pickles", heldPickles);
+        if (iframes > 0) iframes -= Time.deltaTime;
+    }
+
+    public void TakeDamage(float amt)
+    {
+        if (iframes <= 0)
+        {
+            if (heldPickles > 0)
+            {
+                heldPickles = 0;
+                iframes = 0.75f;
+            }
+            else
+            {
+                health = 0;
+            }
         }
     }
 }
