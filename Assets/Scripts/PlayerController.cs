@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject gameOver;
     public Vector3 startPos;
     float iframes = 0;
+    public Text pickleText;
 
 	// Use this for initialization
 	void Awake () {
@@ -111,6 +112,8 @@ public class PlayerController : MonoBehaviour {
             gameOver.SetActive(true);
             gameObject.SetActive(false);
         }
+
+        pickleText.text = (heldPickles > 0) ? "x" + heldPickles.ToString() : "";
         anim.SetInteger("pickles", heldPickles);
         if (iframes > 0) iframes -= Time.deltaTime;
     }
