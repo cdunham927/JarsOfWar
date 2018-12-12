@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befec09c5e4477a4cb2e8d725662dbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyWave: 0
+  pickupWave: 0
+  enemySpawnTime: 0
+  pickupSpawnTime: 0
 --- !u!4 &95372835
 Transform:
   m_ObjectHideFlags: 0

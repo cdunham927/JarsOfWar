@@ -88,7 +88,7 @@ public class CucumberController : EnemyController
         }
         if (distance < attackRange && cools <= 0)
         {
-            chaseCools = 2f;
+            chaseCools = 0.75f;
             curState = states.attack;
         }
 

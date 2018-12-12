@@ -5,6 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public int enemyWave;
+    public int pickupWave;
+    public float enemySpawnTime;
+    public float pickupSpawnTime;
+
+    private void Start()
+    {
+        StartCoroutine(EnemySpawning());
+        StartCoroutine(PickupSpawning());
+    }
+
+    IEnumerator EnemySpawning()
+    {
+
+        enemyWave++;
+        yield return new WaitForSeconds(enemySpawnTime);
+    }
+
+    IEnumerator PickupSpawning()
+    {
+
+        pickupWave++;
+        yield return new WaitForSeconds(pickupSpawnTime);
+    }
+
     public void Restart()
     {
         PlayerController.player.transform.position = PlayerController.player.startPos;
