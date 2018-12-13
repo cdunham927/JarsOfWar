@@ -20,6 +20,7 @@ public class CameraFollow : MonoBehaviour {
         {
             Vector3 targetPos = target.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpd);
+            transform.rotation = Quaternion.identity;
         }
 	}
 

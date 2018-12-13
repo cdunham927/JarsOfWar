@@ -14,6 +14,14 @@ public class GoalController : MonoBehaviour {
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            TurnInPickles();
+        }
+    }
+
     void TurnInPickles()
     {
         //Give player points based on how many pickles they have
