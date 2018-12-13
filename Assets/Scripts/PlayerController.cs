@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour {
             var worldPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
             float xMove = 0;
             float yMove = 0;
+            //Vector3.MoveTowards(transform.position, worldPos, 3f);
 
             // If we press the right side of the screen
             if (worldPos.x < 0.5f)
@@ -115,7 +116,12 @@ public class PlayerController : MonoBehaviour {
 
         pickleText.text = (heldPickles > 0) ? "x" + heldPickles.ToString() : "";
         anim.SetInteger("pickles", heldPickles);
-        if (iframes > 0) iframes -= Time.deltaTime;
+
+        if (iframes > 0)
+        {
+            anim.Play("JarHurt");
+            iframes -= Time.deltaTime;
+        }
     }
 
     public void TakeDamage(float amt)

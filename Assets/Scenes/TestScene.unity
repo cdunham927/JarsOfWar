@@ -3279,9 +3279,9 @@ RectTransform:
   m_Father: {fileID: 348843754}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 90, y: 25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776092345
@@ -6015,8 +6015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: -75}
-  m_SizeDelta: {x: 300, y: 125}
+  m_AnchoredPosition: {x: 70, y: 75}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1386099231
 MonoBehaviour:
@@ -6053,7 +6053,8 @@ MonoBehaviour:
   m_Text: Welcome to Jars of War! In this game, you play as a jar that has to pickel
     cucumbers. Go around the map collecting dead cucumbers and bring them to the goal
     to score points. The more cucumbers you pickel at once the higher your score multiplier!
-    Living Cucumbers will try to stop you from taking their brethren.
+    Living Cucumbers will try to stop you from taking their brethren. Tap the screen
+    to move
 --- !u!222 &1386099232
 CanvasRenderer:
   m_ObjectHideFlags: 0
