@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GoalController : MonoBehaviour {
     public float baseMult = 10;
+    public AudioClip dropOff;
+    private AudioSource source;
+
     //Save vectors for where the spawn can move
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +24,11 @@ public class GoalController : MonoBehaviour {
             TurnInPickles();
         }
     }
-
+    
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
     void TurnInPickles()
     {
         //Give player points based on how many pickles they have
@@ -29,6 +36,7 @@ public class GoalController : MonoBehaviour {
         int pickles = PlayerController.player.heldPickles;
         if (pickles > 0)
         {
+            source.PlayOneShot(dropOff,1F);
             switch (pickles)
             {
                 case 1:
@@ -52,9 +60,8 @@ public class GoalController : MonoBehaviour {
                     PlayerController.player.heldPickles = 0;
                     break;
             }
-
-            //Change position
-
-        }
+            
+        } 
     }
+
 }

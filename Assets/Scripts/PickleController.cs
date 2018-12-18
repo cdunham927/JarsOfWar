@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PickleController : MonoBehaviour {
     SpriteRenderer rend;
+    public AudioClip pickUp;
+    private AudioSource source;
 
     private void Awake()
     {
         rend = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -19,6 +22,7 @@ public class PickleController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Invoke("PickUp", 0.5f);
+        source.PlayOneShot(pickUp,1F);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
